@@ -1,13 +1,17 @@
 <template>
     <lightning-card title="Account Contacts">
-        <template lwc:if={isLoading}>
+        <template if:true={isLoading}>
             <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
         </template>
+        <div class="slds-card__header slds-grid">
+            <template if:true={isEmpty}>
+                <div>No data to display</div>
+            </template>
+        </div>
         <div class="list slds-scrollable_y">
-            <template lwc:if={treeData}>
+            <template if:true={treeData}>
                 <lightning-tree items={treeData} onselect={handleOnselect}></lightning-tree>
             </template>
-            <template lwc:else>No data to display</template>
         </div>
     </lightning-card>
 </template>

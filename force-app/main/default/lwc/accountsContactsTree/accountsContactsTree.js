@@ -7,6 +7,7 @@ export default class AccountsContactsTree extends LightningElement {
     treeData;
     selectedItemId;
     isLoading = true;
+    isEmpty = false;
     @wire(MessageContext) messageContext;
 
     @wire(getTreeData)
@@ -14,6 +15,9 @@ export default class AccountsContactsTree extends LightningElement {
         if (data) {
             this.treeData = data;
             this.isLoading = false;
+            if (this.treeData.length === 0) {
+                this.isEmpty = true;
+            }
         } else if (error) {
             console.error(error);
         }
