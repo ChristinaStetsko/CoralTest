@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="Summary">
+        <div class="slds-var-m-around_medium container">
+            <template lwc:if={account}>
+                <lightning-record-view-form>
+                    <b>Account Info</b>
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">Account Name:</dt>
+                        <dd class="slds-dl_horizontal__detail">{account.Name}</dd>
+                        <dt class="slds-dl_horizontal__label">Type:</dt>
+                        <dd class="slds-dl_horizontal__detail">{account.Type}</dd>
+                        <dt class="slds-dl_horizontal__label">Phone:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-phone value={account.Phone}></lightning-formatted-phone>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">Website:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-url value={account.Website}></lightning-formatted-url>
+                        </dd>
+                    </dl>
+                </lightning-record-view-form>
+            </template>
+
+            <template lwc:elseif={contact}>
+                <lightning-record-view-form>
+                    <b>Account Info</b>
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">Account Name:</dt>
+                        <dd class="slds-dl_horizontal__detail">{relatedAccount.Name}</dd>
+                        <dt class="slds-dl_horizontal__label">Type:</dt>
+                        <dd class="slds-dl_horizontal__detail">{relatedAccount.Type}</dd>
+                        <dt class="slds-dl_horizontal__label">Phone:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-phone value={relatedAccount.Phone}></lightning-formatted-phone>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">Website:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-url value={relatedAccount.Website}></lightning-formatted-url>
+                        </dd>
+                    </dl>
+                </lightning-record-view-form>
+
+                <lightning-record-view-form>
+                    <b>Contact Info</b>
+                    <dl class="slds-dl_horizontal">
+                        <dt class="slds-dl_horizontal__label">Contact Name:</dt>
+                        <dd class="slds-dl_horizontal__detail">{contact.Name}</dd>
+                        <dt class="slds-dl_horizontal__label">Phone:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone>
+                        </dd>
+                        <dt class="slds-dl_horizontal__label">Email:</dt>
+                        <dd class="slds-dl_horizontal__detail">
+                            <lightning-formatted-email value={contact.Email}></lightning-formatted-email>
+                        </dd>
+                    </dl>
+                </lightning-record-view-form>
+            </template>
+            <template lwc:else>No data to display</template>
+        </div>
+    </lightning-card>
+</template>

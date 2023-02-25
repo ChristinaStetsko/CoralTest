@@ -1,0 +1,11 @@
+.split-container {
+    display: flex;
+}
+
+.split-left {
+    width: 50%;
+}
+
+.split-right {
+    width: 50%;
+}

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Account Contacts">
+        <div class="list slds-scrollable_y">
+            <template lwc:if={treeData}>
+                <lightning-tree items={treeData} onselect={handleOnselect}></lightning-tree>
+            </template>
+            <template lwc:else>You have no access to this data</template>
+        </div>
+    </lightning-card>
+</template>
