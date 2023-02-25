@@ -1,6 +1,6 @@
 <template>
     <lightning-card title="Summary">
-        <div class="slds-var-m-around_medium container">
+        <div class="slds-var-m-around_medium container list">
             <template lwc:if={account}>
                 <lightning-record-view-form>
                     <b>Account Info</b>
@@ -56,7 +56,7 @@
                     </dl>
                 </lightning-record-view-form>
             </template>
-            <template lwc:else>No data to display</template>
+            <template lwc:else>Select Account or Contact </template>
         </div>
     </lightning-card>
 </template>

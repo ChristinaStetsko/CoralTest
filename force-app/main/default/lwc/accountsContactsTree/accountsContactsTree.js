@@ -6,12 +6,14 @@ import getTreeData from '@salesforce/apex/AccountContactsController.getTreeData'
 export default class AccountsContactsTree extends LightningElement {
     treeData;
     selectedItemId;
+    isLoading = true;
     @wire(MessageContext) messageContext;
 
     @wire(getTreeData)
     wiredAccounts({ error, data }) {
         if (data) {
             this.treeData = data;
+            this.isLoading = false;
         } else if (error) {
             console.error(error);
         }

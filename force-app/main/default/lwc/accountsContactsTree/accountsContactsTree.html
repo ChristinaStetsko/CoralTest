@@ -1,10 +1,13 @@
 <template>
     <lightning-card title="Account Contacts">
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
         <div class="list slds-scrollable_y">
             <template lwc:if={treeData}>
                 <lightning-tree items={treeData} onselect={handleOnselect}></lightning-tree>
             </template>
-            <template lwc:else>You have no access to this data</template>
+            <template lwc:else>No data to display</template>
         </div>
     </lightning-card>
 </template>
