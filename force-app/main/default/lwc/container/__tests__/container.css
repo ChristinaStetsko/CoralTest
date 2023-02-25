@@ -1,0 +1,9 @@
+.line {
+    display: inline-block;
+}
+
+.c-tree-grid-version,
+.c-subscriber {
+    display: inline-block;
+    vertical-align: top;
+}

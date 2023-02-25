@@ -25,13 +25,10 @@ export default class Summary extends LightningElement {
     wiredDetails({ error, data }) {
         if (data) {
             this.account = data.account;
-            console.log('account data ' + JSON.stringify(this.account));
 
             if (data.contact) {
                 this.contact = data.contact;
-                console.log('contact ' + JSON.stringify(this.contact));
                 this.relatedAccount = data.relatedAccount;
-                console.log('relatedAccount ' + JSON.stringify(this.relatedAccount));
             } else {
                 this.contact = null;
                 this.relatedAccount = null;
