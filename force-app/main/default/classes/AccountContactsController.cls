@@ -28,7 +28,7 @@ public with sharing class AccountContactsController {
 
     public class AccountWrapper {
         @AuraEnabled
-        public String Id { get; set; }
+        public String id { get; set; }
         @AuraEnabled
         public String name { get; set; }
         @AuraEnabled
@@ -41,7 +41,7 @@ public with sharing class AccountContactsController {
 
     public class Item {
         @AuraEnabled
-        public String Id { get; set; }
+        public String id { get; set; }
         @AuraEnabled
         public String name { get; set; }
         @AuraEnabled
