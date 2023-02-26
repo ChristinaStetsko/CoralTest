@@ -2,7 +2,6 @@
 private class SummaryControllerTest {
     @isTest
     static void testGetAccountContactDetails() {
-        // create test data
         Account testAccount = new Account(Name = 'Test Account', Type = 'Customer');
         insert testAccount;
 
